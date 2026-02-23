@@ -8,3 +8,7 @@ def greet(name: str = Header()):
 @app.post("/agent")
 def agent(user_agent: str = Header()):
     return {"message": f"Hello, {user_agent}! This is an agent endpoint."}
+
+@app.post("/data")
+def data(payload: dict = Body()):
+    return {"message": "Data received successfully!", "data": payload}
